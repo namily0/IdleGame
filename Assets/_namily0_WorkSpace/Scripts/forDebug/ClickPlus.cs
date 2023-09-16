@@ -1,3 +1,4 @@
+//this scripts is only use in debug.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,20 +7,18 @@ using UnityEngine.UI;
 
 using useNumber;
 
-public class AutoPlus : MonoBehaviour
+public class ClickPlus : MonoBehaviour
 {
     private Button button;
     public NumManager numManager;
 
     void Start()
     {
-        button = GetComponent<Button>(); 
-        button.onClick.AddListener(Auto1Plus);
+        button = GetComponent<Button>();
     }
 
-    void Auto1Plus()
+    void Click5Plus()
     {
-        numManager.AutoPlus();
+        numManager.ClickPlus();
     }
-
 }

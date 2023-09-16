@@ -1,3 +1,4 @@
+//this scripts is only use in debug.
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,6 @@ public class AutoSpeedUP : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(AutoSpeed);
     }
 
     void Update()

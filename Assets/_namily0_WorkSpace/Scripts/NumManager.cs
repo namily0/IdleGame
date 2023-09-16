@@ -35,17 +35,26 @@ namespace useNumber
             get { return _autoSpan; }
         }
 
+        private int _needNumber = 0;
+        public int needNumber
+        {
+            set { _needNumber = value; }
+            get { return _needNumber; }
+        }
+
         //-----------------------------------------------
 
         //Display----------------------------------------
         public TMP_Text NumDisplay;
         public TMP_Text StatusDisplay;
+        public TMP_Text GachaDisplay;
         //-----------------------------------------------
         
         void Update()
         {
             NumDisplay.text = "Number is " + number.ToString();
             StatusDisplay.text = "Auto:" + autoNum.ToString() + "\nClick:" + clickNum.ToString() + "\nSpeed: " + (Math.Round(Time.timeScale,2)).ToString();
+            GachaDisplay.text = "Need to Gacha: " + needNumber.ToString();
         }
 
         public void SpeedUP()
@@ -55,7 +64,7 @@ namespace useNumber
 
         public void ClickPlus()
         {
-            clickNum += 5;
+            clickNum += 3;
         }
 
         public void AutoPlus()
