@@ -16,11 +16,7 @@ public class AutoSpeedUP : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-    }
-
-    void Update()
-    {
-        
+        button.onClick.AddListener(AutoSpeed);
     }
 
     void AutoSpeed()

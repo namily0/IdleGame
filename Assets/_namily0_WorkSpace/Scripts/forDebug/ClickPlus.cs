@@ -15,6 +15,7 @@ public class ClickPlus : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+        button.onClick.AddListener(Click5Plus);
     }
 
     void Click5Plus()

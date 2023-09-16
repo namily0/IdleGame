@@ -15,6 +15,7 @@ public class AutoPlus : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>(); 
+        button.onClick.AddListener(Auto1Plus);
     }
 
     void Auto1Plus()

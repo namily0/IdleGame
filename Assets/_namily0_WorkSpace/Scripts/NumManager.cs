@@ -14,7 +14,14 @@ namespace useNumber
         private int _number = 0;
         public int number
         {
-            set { _number = value; }
+            set { 
+                if(_number < 0){
+                    _number = 2147483647;
+                    Clear();
+                }else{
+                    _number = value;
+                }
+                }
             get { return _number; }
         }
         private int _clickNum = 1;
@@ -55,6 +62,11 @@ namespace useNumber
             NumDisplay.text = "Number is " + number.ToString();
             StatusDisplay.text = "Auto:" + autoNum.ToString() + "\nClick:" + clickNum.ToString() + "\nSpeed: " + (Math.Round(Time.timeScale,2)).ToString();
             GachaDisplay.text = "Need to Gacha: " + needNumber.ToString();
+            
+        }
+        void Clear()
+        {
+            Debug.Log("clear");
         }
 
         public void SpeedUP()
