@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 using useNumber;
 
@@ -32,11 +33,15 @@ public class GachaManager : MonoBehaviour
 
     void gachaStartFunc()
     {
-        if (numManager.number > numManager.needNumber && gachaFlag)
+        if (numManager.number > numManager.needNumber && gachaFlag && SceneManager.GetActiveScene().name == "GameScene")
         {
             numManager.number -= numManager.needNumber;
             StartCoroutine("gachaStart");
             numManager.needNumber += 10;
+        }
+        else if(SceneManager.GetActiveScene().name == "DebugScene")
+        {
+            SceneManager.LoadScene("GameScene");
         }
     }
 
